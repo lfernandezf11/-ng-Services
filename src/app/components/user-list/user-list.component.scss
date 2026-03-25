@@ -12,7 +12,6 @@
 	border: 1px solid #2e3949;
 	border-radius: 14px;
 	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-	overflow-x: auto;
 }
 
 h2 {
@@ -24,12 +23,12 @@ h2 {
 
 table {
 	width: 100%;
-	min-width: 640px;
 	border-collapse: collapse;
 	background-color: #171d27;
 	border: 1px solid #2e3949;
 	border-radius: 10px;
 	overflow: hidden;
+	table-layout: fixed;
 }
 
 th,
@@ -49,6 +48,7 @@ th {
 
 td {
 	color: #c9d7ea;
+	overflow-wrap: anywhere;
 }
 
 tr:last-child td {
