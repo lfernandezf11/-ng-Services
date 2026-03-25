@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { Component, inject, OnInit } from "@angular/core";
 import { UserService } from "../../services/user.service";
 import { User } from "../../models/user";
+import { Router } from '@angular/router'
 
 @Component({
   standalone: true,
@@ -17,11 +18,12 @@ import { User } from "../../models/user";
   //       }
   // </ul>
 
-imports: [CommonModule],
+  imports: [CommonModule],
 })
 export class UserListComponent implements OnInit {
   users: User[] = [];
   private userService = inject(UserService);
+  private router = inject(Router);
 
   ngOnInit() {
     this.userService.getUsers().subscribe({
@@ -29,4 +31,9 @@ export class UserListComponent implements OnInit {
       error: (err) => console.error('Error al obtener usuarios', err)
     });
   }
+
+  goToDetails(id: number) {
+    this.router.navigate(['/details', id]);
+  }
+
 }

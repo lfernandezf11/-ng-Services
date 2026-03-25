@@ -1,0 +1,91 @@
+<div class="tabla">
+    <h2>Detalles de usuario</h2>
+@if (user) {
+<table>
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th colspan="3">Detalles</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      <td>ID</td>
+      <td colspan="3">{{ user.id }}</td>
+    </tr>
+
+    <tr>
+      <td>Name</td>
+      <td colspan="3">{{ user.name }}</td>
+    </tr>
+
+    <tr>
+      <td>Username</td>
+      <td colspan="3">{{ user.username }}</td>
+    </tr>
+
+    <tr>
+      <td rowspan="6">Address</td>
+      <td>Street</td>
+      <td colspan="2">{{ user.address.street }}</td>
+    </tr>
+
+    <tr>
+      <td>Suite</td>
+      <td colspan="2">{{ user.address.suite }}</td>
+    </tr>
+
+    <tr>
+      <td>City</td>
+      <td colspan="2">{{ user.address.city }}</td>
+    </tr>
+
+    <tr>
+      <td>Zipcode</td>
+      <td colspan="2">{{ user.address.zipcode }}</td>
+    </tr>
+
+    <tr>
+      <td>Geo Lat</td>
+      <td>{{ user.address.geo.lat }}</td>
+    </tr>
+
+    <tr>
+      <td>Geo Lng</td>
+      <td>{{ user.address.geo.lng }}</td>
+    </tr>
+
+    <tr>
+      <td>Phone</td>
+      <td colspan="3">{{ user.phone }}</td>
+    </tr>
+
+    <tr>
+      <td>Website</td>
+      <td colspan="3">{{ user.website }}</td>
+    </tr>
+
+    <tr>
+      <td rowspan="3">Company</td>
+      <td>Name</td>
+      <td colspan="2">{{ user.company.name }}</td>
+    </tr>
+
+    <tr>
+      <td>Catch phrase</td>
+      <td colspan="2">{{ user.company.catchPhrase }}</td>
+    </tr>
+
+    <tr>
+      <td>BS</td>
+      <td colspan="2">{{ user.company.bs }}</td>
+    </tr>
+
+  </tbody>
+</table>
+
+}
+</div>
+<app-footer></app-footer>

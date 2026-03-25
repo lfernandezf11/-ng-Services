@@ -1,9 +1,9 @@
 :host {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	width: 100%;
 	min-height: calc(100dvh - 60px);
-	padding: 1rem 0 2rem;
-	position: relative;
 }
 
 :host::after {
@@ -11,6 +11,19 @@
 	display: block;
 	width: min(1100px, calc(100% - 2rem));
 	height: 1px;
-	margin: 1.25rem auto 0;
+	margin:  0;
 	background: linear-gradient(90deg, transparent 0%, #2e3949 50%, transparent 100%);
+}
+
+h3 {
+	color: #4a8cd8be;
+	text-wrap: balance;
+	display: block;
+	text-align: center;
+}
+
+app-footer {
+	display: block;
+	width: 100%;
+    margin-top: auto;
 }

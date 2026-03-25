@@ -13,7 +13,7 @@
 
         <tbody>
             @for (user of users; track user.id) {
-            <tr style="cursor:pointer">
+            <tr style="cursor:pointer" (click)="goToDetails(user.id)">
                 <td>{{ user.id }}</td>
                 <td>{{ user.username }}</td>
                 <td>{{ user.email }}</td>

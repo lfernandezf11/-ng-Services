@@ -1,9 +1,17 @@
-main{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+:host {
+    display: block;
 }
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100dvh - 60px);
+    font-family: Arial, sans-serif;
+}
+
+app-footer {
+    margin-top: auto;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;

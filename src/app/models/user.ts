@@ -1,4 +1,4 @@
-import { Address } from "cluster";
+import { Adress } from './adress';
 import { Company } from "./company";
 
 export interface User {
@@ -6,7 +6,7 @@ export interface User {
     name: string;
     username: string;
     email: string;
-    address: Address;   
+    address: Adress;
     phone: string;
     website: string;
     company: Company;

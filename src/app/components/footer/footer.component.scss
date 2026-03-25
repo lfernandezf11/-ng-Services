@@ -3,14 +3,12 @@ footer{
     font-family: Arial, Helvetica, sans-serif;
     justify-content: start;
     align-items: center;
-    width: 100vw;
-    margin:0;
+    width: 100%;
+    margin-top: auto;
     padding: 1rem;
     background-color: #111926;
     border-top: 1px solid #283446;
-    padding-top:auto;
     color:white;
-    position:absolute;
-    bottom:0;
+    position: static;
     font-size: 0.8rem;
 }
