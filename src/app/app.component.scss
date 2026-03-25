@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+router-outlet + * {
+  display: block;
+  flex: 1;
+}

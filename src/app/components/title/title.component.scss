@@ -1,0 +1,13 @@
+:host {
+	display: block;
+	margin: 1.5rem auto 1rem;
+	padding: 0 1rem;
+	max-width: 1100px;
+}
+
+h2 {
+	font-size: clamp(1.65rem, 2.6vw, 2.4rem);
+	color: #e8eef7;
+	letter-spacing: 0.02em;
+	text-wrap: balance;
+}

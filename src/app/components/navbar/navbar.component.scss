@@ -1,0 +1,69 @@
+:host {
+	--nav-bg: #111926;
+	--nav-line: #283446;
+	--nav-text: #e8eef7;
+	--nav-btn: #1a2332;
+	--nav-btn-hover: #223046;
+	--nav-btn-active: #2c3e5a;
+
+	display: block;
+	width: 100%;
+}
+
+div {
+	width: 100%;
+	background: var(--nav-bg);
+	border-bottom: 1px solid var(--nav-line);
+	position: sticky;
+	top: 0;
+	z-index: 30;
+	backdrop-filter: blur(6px);
+}
+
+nav {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0.85rem 1rem;
+	display: flex;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+button {
+	border: 0;
+	background-color: var(--nav-btn);
+	color: var(--nav-text);
+	padding: 0.55rem 0.9rem;
+	border-radius: 12px;
+	font-family: "Poppins", "Segoe UI", sans-serif;
+	font-weight: 600;
+	font-size: 0.92rem;
+	letter-spacing: 0.01em;
+	cursor: pointer;
+	transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+	background-color: var(--nav-btn-hover);
+	transform: translateY(-1px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+button:active {
+	background-color: var(--nav-btn-active);
+	transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+	nav {
+		flex-wrap: wrap;
+		gap: 0.55rem;
+		justify-content: center;
+		padding: 0.75rem;
+	}
+
+	button {
+		width: 100%;
+		max-width: 260px;
+	}
+}

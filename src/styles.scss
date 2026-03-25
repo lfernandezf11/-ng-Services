@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+	--font-family-base: "Poppins", "Segoe UI", sans-serif;
+	--color-bg: #0f131a;
+	--color-surface: #171d27;
+	--color-surface-2: #1f2733;
+	--color-border: #2e3949;
+	--color-text: #e8eef7;
+	--color-muted: #9fb0c7;
+	--color-accent: #4cc9f0;
+	--color-accent-2: #7ae582;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: var(--font-family-base);
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	background:
+		radial-gradient(circle at 10% 10%, #1b2739 0%, transparent 45%),
+		radial-gradient(circle at 85% 0%, #1a2230 0%, transparent 35%),
+		var(--color-bg);
+	color: var(--color-text);
+}
+
+body {
+	line-height: 1.45;
+}
+
+main,
+section,
+article,
+aside,
+header,
+footer,
+nav,
+div {
+	color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--color-text);
+}
+
+p,
+span,
+label,
+small {
+	color: var(--color-muted);
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+th,
+td {
+	text-align: left;
+	padding: 0.85rem 1rem;
+	border-bottom: 1px solid var(--color-border);
+}
+
+th {
+	color: var(--color-text);
+	background-color: #222c3a;
+}
+
+tr:hover td {
+	background-color: #202a38;
+}

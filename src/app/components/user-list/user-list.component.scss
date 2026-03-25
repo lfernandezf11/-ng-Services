@@ -1,0 +1,77 @@
+:host {
+	display: block;
+	width: 100%;
+	padding: 0 1rem 1.5rem;
+}
+
+.tabla {
+	width: min(1100px, 100%);
+	margin: 0 auto;
+	padding: 1rem;
+	background: linear-gradient(180deg, #151d2a 0%, #111722 100%);
+	border: 1px solid #2e3949;
+	border-radius: 14px;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+	overflow-x: auto;
+}
+
+h2 {
+	margin: 0 0 0.9rem;
+	font-size: clamp(1.2rem, 2.3vw, 1.6rem);
+	color: #e8eef7;
+	letter-spacing: 0.02em;
+}
+
+table {
+	width: 100%;
+	min-width: 640px;
+	border-collapse: collapse;
+	background-color: #171d27;
+	border: 1px solid #2e3949;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+th,
+td {
+	padding: 0.8rem 1rem;
+	text-align: left;
+	border-bottom: 1px solid #2e3949;
+	font-size: 0.95rem;
+}
+
+th {
+	background-color: #212c3c;
+	color: #e8eef7;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+td {
+	color: #c9d7ea;
+}
+
+tr:last-child td {
+	border-bottom: 0;
+}
+
+tr:hover td {
+	background-color: #202a38;
+	transition: background-color 0.2s ease;
+}
+
+@media (max-width: 720px) {
+	:host {
+		padding: 0 0.75rem 1.25rem;
+	}
+
+	.tabla {
+		padding: 0.75rem;
+	}
+
+	th,
+	td {
+		padding: 0.7rem 0.75rem;
+		font-size: 0.88rem;
+	}
+}
