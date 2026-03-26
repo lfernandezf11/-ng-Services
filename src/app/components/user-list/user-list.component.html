@@ -1,3 +1,26 @@
+<div class="filters">
+        <h2>Filtro de usuarios</h2>
+        <input
+            type="text"
+            placeholder="Filtrar por nombre..."
+            [value]="nameFilter()" 
+            (input)="nameFilter.set($any($event.target).value)">
+
+        <select
+            [value]="cityFilter()"
+            (change)="cityFilter.set($any($event.target).value)">
+            <option value="">Todas las ciudades</option>
+            @for (city of uniqueCities(); track city) {
+            <option [value]="city">
+                {{ city }}
+            </option>
+            }
+        </select>
+
+        <button (click)="resetFilters()">Resetear filtros</button>
+
+    </div>
+
 <div class="tabla">
     <h2>Lista de Usuarios</h2>
 
@@ -12,7 +35,7 @@
         </thead>
 
         <tbody>
-            @for (user of users; track user.id) {
+            @for (user of filteredUsers(); track user.id) {
             <tr style="cursor:pointer" (click)="goToDetails(user.id)">
                 <td>{{ user.id }}</td>
                 <td>{{ user.username }}</td>
