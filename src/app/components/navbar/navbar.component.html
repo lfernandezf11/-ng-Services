@@ -1,9 +1,12 @@
-<div>
+<div class="header-container">
     <nav>
         <button routerLink="/">{{ 'navbar.home' | translate }}</button>
         <button routerLink="/about">{{ 'navbar.about' | translate }}</button>
+
+
     </nav>
-    <button class="toggle-lang" (click)="toggleLanguage()" [value]="currentLanguage.toUpperCase()">
+    <button class="toggle-lang" (click)="toggleLanguage()"
+        [value]="currentLanguage.toUpperCase()">
+        {{ currentLanguage === 'en' ? 'ES' : 'EN' }}
     </button>
 </div>
-
