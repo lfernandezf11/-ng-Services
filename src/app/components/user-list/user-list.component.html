@@ -1,15 +1,15 @@
 <div class="filters">
-        <h2>Filtro de usuarios</h2>
+        <h2>{{ 'userList.filtersTitle' | translate }}</h2>
         <input
             type="text"
-            placeholder="Filtrar por nombre..."
+            [placeholder]="'userList.namePlaceholder' | translate"
             [value]="nameFilter()" 
             (input)="nameFilter.set($any($event.target).value)">
 
         <select
             [value]="cityFilter()"
             (change)="cityFilter.set($any($event.target).value)">
-            <option value="">Todas las ciudades</option>
+            <option value="">{{ 'userList.allCities' | translate }}</option>
             @for (city of uniqueCities(); track city) {
             <option [value]="city">
                 {{ city }}
@@ -17,20 +17,20 @@
             }
         </select>
 
-        <button (click)="resetFilters()">Resetear filtros</button>
+        <button (click)="resetFilters()">{{ 'userList.resetFilters' | translate }}</button>
 
     </div>
 
 <div class="tabla">
-    <h2>Lista de Usuarios</h2>
+    <h2>{{ 'userList.tableTitle' | translate }}</h2>
 
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Phone</th>
+                <th>{{ 'userList.columns.id' | translate }}</th>
+                <th>{{ 'userList.columns.username' | translate }}</th>
+                <th>{{ 'userList.columns.email' | translate }}</th>
+                <th>{{ 'userList.columns.phone' | translate }}</th>
             </tr>
         </thead>
 

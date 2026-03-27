@@ -1,4 +1,4 @@
-<app-title pageName="About"></app-title>
-<h3>Pulsa sobre un usuario para ver sus detalles</h3>
+<app-title [pageName]="'pages.about' | translate"></app-title>
+<h3>{{ 'about.hint' | translate }}</h3>
 <app-user-list></app-user-list>
 <app-footer></app-footer>

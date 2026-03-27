@@ -2,6 +2,7 @@ import { Component, computed, inject, OnInit, signal } from "@angular/core";
 import { UserService } from "../../services/user.service";
 import { User } from "../../models/user";
 import { Router } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   standalone: true,
@@ -17,7 +18,7 @@ import { Router } from '@angular/router';
   //       }
   // </ul>
 
-  imports: [],
+  imports: [TranslatePipe],
 })
 
 export class UserListComponent implements OnInit {

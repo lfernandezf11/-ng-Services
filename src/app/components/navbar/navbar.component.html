@@ -1,7 +1,9 @@
 <div>
     <nav>
-        <button routerLink="/">Ir a Inicio</button>
-        <button routerLink="/about">About</button>
+        <button routerLink="/">{{ 'navbar.home' | translate }}</button>
+        <button routerLink="/about">{{ 'navbar.about' | translate }}</button>
     </nav>
+    <button class="toggle-lang" (click)="toggleLanguage()" [value]="currentLanguage.toUpperCase()">
+    </button>
 </div>
 

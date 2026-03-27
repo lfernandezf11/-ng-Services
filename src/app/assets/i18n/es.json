@@ -1,0 +1,54 @@
+{
+  "navbar": {
+    "home": "Ir a Inicio",
+    "about": "About"
+  },
+  "title": {
+    "welcomePage": "Bienvenido a la página de {{pageName}}"
+  },
+  "about": {
+    "hint": "Pulsa sobre un usuario para ver sus detalles"
+  },
+  "pages": {
+    "home": "Inicio",
+    "about": "About"
+  },
+  "userList": {
+    "filtersTitle": "Filtro de usuarios",
+    "namePlaceholder": "Filtrar por nombre...",
+    "allCities": "Todas las ciudades",
+    "resetFilters": "Resetear filtros",
+    "tableTitle": "Lista de Usuarios",
+    "columns": {
+      "id": "ID",
+      "username": "Username",
+      "email": "Email",
+      "phone": "Phone"
+    }
+  },
+  "details": {
+    "title": "Detalles de usuario",
+    "headerUser": "Usuario",
+    "headerDetails": "Detalles",
+    "fields": {
+      "id": "ID",
+      "name": "Name",
+      "username": "Username",
+      "address": "Address",
+      "street": "Street",
+      "suite": "Suite",
+      "city": "City",
+      "zipcode": "Zipcode",
+      "geoLat": "Geo Lat",
+      "geoLng": "Geo Lng",
+      "phone": "Phone",
+      "website": "Website",
+      "company": "Company",
+      "catchPhrase": "Catch phrase",
+      "bs": "BS"
+    }
+  },
+  "footer": {
+    "author": "Lucía Fernández Florencio"
+  }
+}

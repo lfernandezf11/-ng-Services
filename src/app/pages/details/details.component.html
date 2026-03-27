@@ -1,85 +1,85 @@
 <div class="tabla">
-    <h2>Detalles de usuario</h2>
+    <h2>{{ 'details.title' | translate }}</h2>
 @if (user) {
 <table>
   <thead>
     <tr>
-      <th>Usuario</th>
-      <th colspan="3">Detalles</th>
+      <th>{{ 'details.headerUser' | translate }}</th>
+      <th colspan="3">{{ 'details.headerDetails' | translate }}</th>
     </tr>
   </thead>
 
   <tbody>
 
     <tr>
-      <td>ID</td>
+      <td>{{ 'details.fields.id' | translate }}</td>
       <td colspan="3">{{ user.id }}</td>
     </tr>
 
     <tr>
-      <td>Name</td>
+      <td>{{ 'details.fields.name' | translate }}</td>
       <td colspan="3">{{ user.name }}</td>
     </tr>
 
     <tr>
-      <td>Username</td>
+      <td>{{ 'details.fields.username' | translate }}</td>
       <td colspan="3">{{ user.username }}</td>
     </tr>
 
     <tr>
-      <td rowspan="6">Address</td>
-      <td>Street</td>
+      <td rowspan="6">{{ 'details.fields.address' | translate }}</td>
+      <td>{{ 'details.fields.street' | translate }}</td>
       <td colspan="2">{{ user.address.street }}</td>
     </tr>
 
     <tr>
-      <td>Suite</td>
+      <td>{{ 'details.fields.suite' | translate }}</td>
       <td colspan="2">{{ user.address.suite }}</td>
     </tr>
 
     <tr>
-      <td>City</td>
+      <td>{{ 'details.fields.city' | translate }}</td>
       <td colspan="2">{{ user.address.city }}</td>
     </tr>
 
     <tr>
-      <td>Zipcode</td>
+      <td>{{ 'details.fields.zipcode' | translate }}</td>
       <td colspan="2">{{ user.address.zipcode }}</td>
     </tr>
 
     <tr>
-      <td>Geo Lat</td>
+      <td>{{ 'details.fields.geoLat' | translate }}</td>
       <td>{{ user.address.geo.lat }}</td>
     </tr>
 
     <tr>
-      <td>Geo Lng</td>
+      <td>{{ 'details.fields.geoLng' | translate }}</td>
       <td>{{ user.address.geo.lng }}</td>
     </tr>
 
     <tr>
-      <td>Phone</td>
+      <td>{{ 'details.fields.phone' | translate }}</td>
       <td colspan="3">{{ user.phone }}</td>
     </tr>
 
     <tr>
-      <td>Website</td>
+      <td>{{ 'details.fields.website' | translate }}</td>
       <td colspan="3">{{ user.website }}</td>
     </tr>
 
     <tr>
-      <td rowspan="3">Company</td>
-      <td>Name</td>
+      <td rowspan="3">{{ 'details.fields.company' | translate }}</td>
+      <td>{{ 'details.fields.name' | translate }}</td>
       <td colspan="2">{{ user.company.name }}</td>
     </tr>
 
     <tr>
-      <td>Catch phrase</td>
+      <td>{{ 'details.fields.catchPhrase' | translate }}</td>
       <td colspan="2">{{ user.company.catchPhrase }}</td>
     </tr>
 
     <tr>
-      <td>BS</td>
+      <td>{{ 'details.fields.bs' | translate }}</td>
       <td colspan="2">{{ user.company.bs }}</td>
     </tr>
 

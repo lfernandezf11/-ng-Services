@@ -4,12 +4,22 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
+import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes), 
     provideClientHydration(withEventReplay()),
-    provideHttpClient()
+    provideHttpClient(), 
+    provideTranslateService({
+            loader: provideTranslateHttpLoader({prefix:"/i18n/app/"}),
+            fallbackLang: 'en', // de respaldo
+            lang: 'es' // inicial
+        })
   ],
 };
+
+
