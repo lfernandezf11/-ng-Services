@@ -1,1 +1,10 @@
-<p>admin works!</p>
+<section class="admin-page">
+	<div class="admin-content">
+		<div class="admin-title">
+			<app-title [pageName]="'Administrador'"></app-title>
+		</div>
+		<h3>Bienvenida, {{ authService.user()?.name }}</h3>
+	</div>
+
+	<app-footer></app-footer>
+</section>

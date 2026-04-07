@@ -29,19 +29,27 @@ export class LoginFormComponent {
   //   password: [''],
   // });  
 
-  login() {
-    const { name, password } = this.loginForm.getRawValue();
+ login() {
+  const { name, password } = this.loginForm.getRawValue();
 
-    if (this.authService.login(name ?? '', password ?? '')) {   // El ?? '' asegura que siempre sea un string
-      this.router.navigate(['/admin']);
-    } else {
-      this.error = 'Credenciales incorrectas';
+  this.authService.login(name ?? '', password ?? '').subscribe({ // La llamada a la api es obligatoriamente un Observable
+    next: (isValid: boolean) => {
+      if (isValid) {
+        this.error = null;
+        this.router.navigate(['/admin']);
+      } else {
+        this.error = 'Credenciales incorrectas';
+      }
+    },
+    error: (err) => {
+      this.error = 'No se ha podido conectar con el servidor';
+      console.error('Error en la petición:', err);
     }
-  }
+  });
+}
   
   logout() {
     this.authService.logout();
-    this.router.navigate(['/login']);
   }
   resetFields() {
     this.loginForm.reset();
