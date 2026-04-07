@@ -1,0 +1,23 @@
+<app-title [pageName]="'Login'"></app-title>
+<h3>Iniciar sesión</h3>
+
+@if (error) {
+<p style="color: red;">{{ error }}</p>
+}
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <label for="name">Nombre:</label>
+  <input type="text" id="name" formControlName="name">
+
+  <label for="password">Contraseña:</label>
+  <input type="password" id="password" formControlName="password">
+
+  <button type="submit" [disabled]="loginForm.invalid">Enviar</button>
+  <button type="button" (click)="resetFields()">Limpiar</button>
+</form>
+
+<!-- Alternativa de acceso por Controls.
+<form>
+  <input type="text" [formControl]="loginForm.controls.name">
+  <input type="password" [formControl]="loginForm.controls.password">
+</form> -->

@@ -2,7 +2,11 @@
     <nav>
         <button routerLink="/">{{ 'navbar.home' | translate }}</button>
         <button routerLink="/about">{{ 'navbar.about' | translate }}</button>
-
+        @if (isAuthenticated()) {
+            <button (click)="logout()">Cerrar sesión</button>
+        } @else {
+            <button routerLink="/login">Iniciar sesión</button>
+        }
 
     </nav>
     <button class="toggle-lang" (click)="toggleLanguage()"

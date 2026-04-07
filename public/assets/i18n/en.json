@@ -1,7 +1,8 @@
 {
   "navbar": {
     "home": "Go to Home",
-    "about": "About"
+    "about": "About",
+    "login": "Login"
   },
   "title": {
     "welcomePage": "Welcome to the {{pageName}} page"
@@ -11,7 +12,8 @@
   },
   "pages": {
     "home": "Home",
-    "about": "About"
+    "about": "About",
+    "login": "Login"
   },
   "userList": {
     "filtersTitle": "User filter",

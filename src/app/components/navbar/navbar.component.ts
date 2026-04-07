@@ -1,6 +1,7 @@
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Component, inject, signal } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +12,8 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 export class NavbarComponent {
 
   private translate = inject(TranslateService);
+  authService = inject(AuthService);
+  isAuthenticated = this.authService.isAuthenticated;
   currentLanguage: string = this.translate.getCurrentLang() || 'es';
 
   constructor() {
@@ -21,5 +24,9 @@ export class NavbarComponent {
   toggleLanguage(): void {
     this.currentLanguage = this.currentLanguage === 'es' ? 'en' : 'es';
     this.translate.use(this.currentLanguage);
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

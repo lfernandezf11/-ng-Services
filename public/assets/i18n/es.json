@@ -11,7 +11,8 @@
   },
   "pages": {
     "home": "Inicio",
-    "about": "About"
+    "about": "Acerca de",
+    "login": "Inicio de sesión"
   },
   "userList": {
     "filtersTitle": "Filtro de usuarios",
