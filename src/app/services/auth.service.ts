@@ -4,6 +4,12 @@ import { Router } from '@angular/router';
 import { LogUser } from '../models/logUser';
 import { map, Observable } from 'rxjs';
 
+// Fase 5 → Inyectar el token desde un servicio
+
+// Crea un AuthService que devuelva el token del usuario actual. Luego modifica tu interceptor para obtener el token usando inject(AuthService).
+
+ 
+
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   // Verificamos físicamente si existe el objeto 'window', es decir, el entorno de ejecución es el navegador
@@ -53,5 +59,4 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 }
-
 
