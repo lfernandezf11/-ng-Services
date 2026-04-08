@@ -4,17 +4,11 @@ import { Router } from '@angular/router';
 import { LogUser } from '../models/logUser';
 import { map, Observable } from 'rxjs';
 
-// Fase 5 → Inyectar el token desde un servicio
-
-// Crea un AuthService que devuelva el token del usuario actual. Luego modifica tu interceptor para obtener el token usando inject(AuthService).
-
- 
-
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   // Verificamos físicamente si existe el objeto 'window', es decir, el entorno de ejecución es el navegador
   private isBrowser = typeof window !== 'undefined';
-  private apiUrl = 'http://localhost:3000/users';
+  private baseUrl = 'http://localhost:3000';
 
   private http = inject(HttpClient);
   private router = inject(Router);
@@ -27,15 +21,25 @@ export class AuthService {
     this.isBrowser ? JSON.parse(localStorage.getItem('user') || 'null') : null
   );
 
-  login(name: string, password: string): Observable<boolean> {
-    return this.http.get<LogUser[]>(`${this.apiUrl}?name=${name}&password=${password}`).pipe(
-      map(users => {
+  getToken() {
+    return this.isBrowser ? localStorage.getItem('token') : null;
+  }
+// Fase 6 → Agregar una cabecera personalizada solo para ciertas rutas.
 
+// Si la URL de la petición contiene /admin, añade una cabecera especial X-Admin: true. Si no, deja la petición normal.
+
+  login(name: string, password: string): Observable<boolean> {
+
+    const endpoint = name.toLocaleLowerCase().includes('admin') ? 'admin' : 'users';
+    const apiUrl = `${this.baseUrl}/${endpoint}`;
+
+    return this.http.get<LogUser[]>(`${apiUrl}?name=${name}&password=${password}`).pipe(
+      map(users => {
         // Si el array contiene al menos un elemento, las credenciales son correctas
         if (users.length > 0) {
 
           if (this.isBrowser) {
-            localStorage.setItem('token', 'token-value-true'); // llave de ejemplo, en un caso real se debería usar un token seguro
+            localStorage.setItem('token', 'current-user-token'); // llave de ejemplo, en un caso real se debería usar un token seguro
             localStorage.setItem('user', JSON.stringify(users[0]));
           }
           this.isAuthenticated.set(true);
