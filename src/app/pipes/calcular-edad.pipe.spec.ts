@@ -1,8 +1,8 @@
-import { CalcularEdadPipe } from './calcular-edad.pipe';
+import { EdadPipe } from './calcular-edad.pipe';
 
 describe('CalcularEdadPipe', () => {
   it('create an instance', () => {
-    const pipe = new CalcularEdadPipe();
+    const pipe = new EdadPipe();
     expect(pipe).toBeTruthy();
   });
 });

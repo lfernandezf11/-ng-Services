@@ -15,7 +15,7 @@ import {
 import { DoblePipe } from '../../pipes/doble.pipe';
 import { SaludoPipe } from '../../pipes/saludo.pipe';
 import { ResaltarPipe } from '../../pipes/resaltar.pipe';
-import { CalcularEdadPipe } from '../../pipes/calcular-edad.pipe';
+import { EdadPipe } from '../../pipes/edad.pipe';
 
 @Component({
   selector: 'app-home',
@@ -35,7 +35,7 @@ import { CalcularEdadPipe } from '../../pipes/calcular-edad.pipe';
     SaludoPipe,
     DoblePipe,
     ResaltarPipe,
-    CalcularEdadPipe
+    EdadPipe
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
