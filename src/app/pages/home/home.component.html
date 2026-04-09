@@ -1,5 +1,125 @@
 <main>
     <app-title [pageName]="'pages.home' | translate"></app-title>
-    
+
+	<details class="pipe-card text-pipes">
+		<summary><h3>Pipes de texto</h3></summary>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Uppercase</p>
+			<div class="pipe-value pipe-example-result">{{ 'hola mundo' | uppercase }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Lowercase</p>
+			<div class="pipe-value pipe-example-result">{{ 'HOLA MUNDO' | lowercase }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Titlecase</p>
+			<div class="pipe-value pipe-example-result">{{ 'hola mundo' | titlecase }}</div>
+		</div>
+	</details>
+
+	<details class="pipe-card date-pipes">
+		<summary><h3>DataPipe</h3></summary>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Default (date)</p>
+			<div class="pipe-value pipe-example-result">{{ today | date }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Fecha completa (date:'fullDate')</p>
+			<div class="pipe-value pipe-example-result">{{ today | date:'fullDate' }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Fecha corta (date:'shortDate')</p>
+			<div class="pipe-value pipe-example-result">{{ today | date:'shortDate' }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Hora (date:'shortTime')</p>
+			<div class="pipe-value pipe-example-result">{{ today | date:'shortTime' }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Fecha y hora (date:'medium')</p>
+			<div class="pipe-value pipe-example-result">{{ today | date:'medium' }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Formato personalizado (date:'dd/MM/yyyy HH:mm:ss')</p>
+			<div class="pipe-value pipe-example-result">{{ today | date:'dd/MM/yyyy HH:mm:ss' }}</div>
+		</div>
+	</details>
+
+	<details class="pipe-card currency-pipes">
+		<summary><h3>CurrencyPipe</h3></summary>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">EUR (default)</p>
+			<div class="pipe-value pipe-example-result">{{ price | currency }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">USD (symbol)</p>
+			<div class="pipe-value pipe-example-result">{{ price | currency:'USD':'symbol':'1.2-2' }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">EUR (code)</p>
+			<div class="pipe-value pipe-example-result">{{ price | currency:'EUR':'code':'1.2-2' }}</div>
+		</div>
+	</details>
+
+	<details class="pipe-card percent-pipes">
+		<summary><h3>PercentPipe</h3></summary>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Progreso básico</p>
+			<div class="pipe-value pipe-example-result">{{ progress | percent }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Progreso con 2 decimales</p>
+			<div class="pipe-value pipe-example-result">{{ progress | percent:'1.2-2' }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Completado</p>
+			<div class="pipe-value pipe-example-result">{{ completed | percent:'1.0-0' }}</div>
+		</div>
+	</details>
+
+	<details class="pipe-card slice-pipes">
+		<summary><h3>SlicePipe</h3></summary>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Texto completo</p>
+			<div class="pipe-value pipe-example-result">{{ longText }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Primeros 20 caracteres</p>
+			<div class="pipe-value pipe-example-result">{{ longText | slice:0:20 }}</div>
+		</div>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Desde posición 10</p>
+			<div class="pipe-value pipe-example-result">{{ longText | slice:10 }}</div>
+		</div>
+	</details>
+
+	<details class="pipe-card json-pipes">
+		<summary><h3>JsonPipe</h3></summary>
+		<div class="pipe-example">
+			<p class="pipe-label pipe-example-title">Objeto renderizado</p>
+			<pre class="pipe-value pipe-example-result json-block">{{ userProfile | json }}</pre>
+		</div>
+	</details>
+
+	<details class="pipe-card custom-pipes">
+		<summary><h3>Pipes Personalizados</h3></summary>
+		<div class="custom-pipe-item">
+			<p class="pipe-label custom-pipe-title">SaludoPipe</p>
+			<div class="pipe-value custom-pipe-result">{{ 'Lucía' | saludo }}</div>
+		</div>
+		<div class="custom-pipe-item">
+			<p class="pipe-label custom-pipe-title">DoblePipe (21 | doble)</p>
+			<div class="pipe-value custom-pipe-result">{{ 21 | doble }}</div>
+		</div>
+		<div class="custom-pipe-item">
+			<p class="pipe-label custom-pipe-title">ResaltarPipe</p>
+			<div class="pipe-value custom-pipe-result" [innerHTML]="'Texto resaltado' | resaltar"></div>
+		</div>
+		<div class="custom-pipe-item">
+			<p class="pipe-label custom-pipe-title">CalcularEdadPipe (15/03/1996)</p>
+			<div class="pipe-value custom-pipe-result">{{ birthDate | calcularEdad }} años</div>
+		</div>
+	</details>
+
     <app-footer></app-footer>
 </main>

@@ -3,8 +3,9 @@
 		<div class="admin-title">
 			<app-title [pageName]="'Administrador'"></app-title>
 		</div>
-		<h3>Bienvenida, {{ authService.user()?.name }}</h3>
+		<h3>{{ (authService.user()?.name || '') | saludo }}</h3>
 	</div>
+
 
 	<app-footer></app-footer>
 </section>
