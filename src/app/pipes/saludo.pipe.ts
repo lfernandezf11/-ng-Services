@@ -4,11 +4,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'saludo',
   standalone: true
 })
-export class SaludoPipe implements PipeTransform { 
+export class SaludoPipe implements PipeTransform {
 
- transform(nombre: string): string { 
-   return `¡Hola, ${nombre}!`; 
+  transform(nombre: string): string {
+    return `¡Hola, ${nombre}!`;
 
- } 
+  }
 
-} 
+}

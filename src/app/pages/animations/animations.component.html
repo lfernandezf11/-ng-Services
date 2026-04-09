@@ -1,0 +1,93 @@
+<main class="animations-page" #animationsRoot>
+	<app-title [pageName]="'Animaciones GSAP'"></app-title>
+
+	<section class="demo-card hero-card">
+		<p class="eyebrow">Ejercicio 1</p>
+		<h3 class="animated-title">Animación de un título con .from(), .to()</h3>
+		<p class="hero-copy">Una entrada sencilla con desplazamiento, opacidad, duración y easing.</p>
+	</section>
+
+	<section class="demo-card sequence-card">
+		<p class="eyebrow">Ejercicio 2</p>
+		<h3 class="sequence-title">Secuencia de animación (timeline)</h3>
+		<p class="sequence-subtitle">Título, subtítulo y botón entran en orden con timeline.</p>
+		<button type="button" class="sequence-button action-button" (click)="runSequenceAnimation()">Ver secuencia</button>
+	</section>
+
+	<section class="demo-card">
+		<p class="eyebrow">Ejercicio 3</p>
+		<h3>Animación en cadena (stagger)</h3>
+		<ul class="stagger-list">
+			<li class="stagger-item" *ngFor="let item of staggerItems">{{ item }}</li>
+		</ul>
+		<button type="button" class="action-button" (click)="runStaggerAnimation()">Lanzar stagger</button>
+	</section>
+
+	<section class="demo-card decorative-card">
+		<p class="eyebrow">Ejercicio 4</p>
+		<h3>Animación repetitiva</h3>
+		<div class="decorative-orb"></div>
+	</section>
+
+	<section class="demo-card labels-card">
+		<p class="eyebrow">Ejercicio 5</p>
+		<h3>Labels en el timeline</h3>
+		<div class="label-track">
+			<span class="label-pill start">Inicio</span>
+			<span class="label-pill middle">Centro</span>
+			<span class="label-pill end">Final</span>
+		</div>
+		<button type="button" class="action-button" (click)="runLabelsAnimation()">Lanzar labels</button>
+	</section>
+
+	<section class="demo-card callbacks-card">
+		<p class="eyebrow">Ejercicio 6</p>
+		<h3>Callbacks</h3>
+		<p class="card-copy">{{ callbackMessage }}</p>
+		<div class="callback-box"></div>
+		<button type="button" class="action-button" (click)="playCallbackAnimation()">Lanzar callbacks</button>
+	</section>
+
+	<section class="demo-card controls-card">
+		<p class="eyebrow">Ejercicio 7</p>
+		<h3>Control manual del timeline</h3>
+		<div class="control-box"></div>
+		<div class="control-buttons">
+			<button type="button" class="action-button" (click)="playControlTimeline()">Play</button>
+			<button type="button" class="action-button" (click)="pauseControlTimeline()">Pause</button>
+			<button type="button" class="action-button" (click)="reverseControlTimeline()">Reverse</button>
+		</div>
+	</section>
+
+	<section class="demo-card click-card">
+		<p class="eyebrow">Ejercicio 8</p>
+		<h3>Animación con evento de usuario</h3>
+		<button type="button" class="action-button" (click)="runClickAnimation()">Animar al hacer click</button>
+		<div class="click-burst"></div>
+	</section>
+
+	<section class="demo-card scroll-card">
+		<p class="eyebrow">Ejercicio 9</p>
+		<h3>Animación basada en scroll</h3>
+		<div class="scroll-panel">
+			<p>Este panel entra cuando aparece en pantalla.</p>
+		</div>
+	</section>
+
+	<section class="demo-card mouse-card">
+		<p class="eyebrow">Ejercicio 10</p>
+		<h3>Movimiento del ratón</h3>
+		<div class="mouse-area" #mouseArea>
+			<div class="mouse-dot" #mouseDot></div>
+			<p>Mueve el puntero dentro de este área.</p>
+		</div>
+	</section>
+
+	<section class="demo-card responsive-card">
+		<p class="eyebrow">Ejercicio 11</p>
+		<h3>Animación responsive</h3>
+		<div class="responsive-box">Desktop y mobile usan entradas distintas con matchMedia.</div>
+	</section>
+
+	<app-footer></app-footer>
+</main>

@@ -4,6 +4,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { authGuard } from './core/guards/auth.guard';
 import { LoginFormComponent } from './components/loginForm/login-form.component';
+import { AnimationsComponent } from './pages/animations/animations.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,10 @@ export const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'animations',
+    component: AnimationsComponent
   },
   {
     path: 'login',
