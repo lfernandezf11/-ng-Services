@@ -1,0 +1,54 @@
+<main>
+	<app-title [pageName]="'Lista de mensajes SSE'"></app-title>
+	<div class="tabla">
+		<div class="toolbar">
+			<div>
+				<h2>Mensajes recibidos desde el servidor</h2>
+				<h3>Estado de conexión: {{ status() | uppercase }}</h3>
+			</div>
+
+			<div class="actions">
+                <button type="button" class="action-button" (click)="startConnection()" [disabled]="isConnectionActive">
+					Iniciar conexión
+				</button>
+                <button type="button" class="action-button secondary" (click)="stopConnection()" [disabled]="!isConnectionActive">
+					Parar conexión
+				</button>
+			</div>
+		</div>
+
+        <div class="progress-card">
+            <div class="progress-header">
+                <span>Progreso</span>
+                <strong>{{ currentProgress }}%</strong>
+            </div>
+            <div class="progress-bar" aria-hidden="true">
+                <div class="progress-fill" [style.width.%]="currentProgress"></div>
+            </div>
+        </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Mensaje</th>
+                <th>Hora</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (message of messages; track $index) {
+            <tr>
+                <td>{{ message.message }}</td>
+                <td>{{ message.timestamp | date:'HH:mm:ss' }}</td>
+                <td>{{ (message.type || 'General') | uppercase}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</main>
+
+<app-footer></app-footer>
+
+

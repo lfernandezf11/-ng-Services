@@ -3,6 +3,7 @@
         <button routerLink="/">{{ 'navbar.home' | translate }}</button>
         <button routerLink="/about">{{ 'navbar.about' | translate }}</button>
         <button routerLink="/animations">Animaciones</button>
+        <button routerLink="/sse">Mensajes SSE</button>
         @if (isAuthenticated()) {
             <button (click)="logout()">Cerrar sesión</button>
         } @else {
