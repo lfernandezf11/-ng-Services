@@ -17,20 +17,24 @@ export class SseService {
   }
 
   getServerEvents(): Observable<any> {
-
     return new Observable((observer) => {
       const eventSource = new EventSource('http://localhost:3000/events');
 
       eventSource.onopen = () => {
         this.connectionStatus.set('Abierta');
-        console.log('Conexión SSE abierta');
       };
 
       eventSource.onmessage = (event) => {
         try {
           const data = JSON.parse(event.data);
-          observer.next(data); // Envía el objeto al suscriptor
-          console.log('Dato recibido (message):', data);
+
+          // Evita que un payload de progreso entre también como mensaje general.
+          if (data && typeof data === 'object' && 'progress' in data) {
+            return;
+          }
+
+          const type = data.type === undefined ? 'general' : data.type;
+          observer.next({...data, type}); // Envía el objeto al suscriptor
         } catch (error) {
           console.error('Error parseando JSON:', error);
         }
@@ -40,7 +44,6 @@ export class SseService {
         try {
           const data = JSON.parse(event.data);
           observer.next({...data, type: 'progreso'}); // Diferenciación de tipo message para tto en html
-          console.log('Progreso:', data);
         } catch (error) {
           console.error('Error en SSE (progress-mesagge):', error);
         }
@@ -48,14 +51,12 @@ export class SseService {
       });
 
       eventSource.onerror = (error) => {
-        console.error('Fallo en la conexión SSE. Reconectando...');
         this.connectionStatus.set('Reconectando...');
         // Puesto que SSE intenta reconectar automáticamente, no es necesario finalizar el observer, pero se podría
         // observer.error(error);
       };
 
       return () => {
-        console.log('Cerrando conexión...');
         this.setDisconnectedStatus();
         eventSource.close();
       };

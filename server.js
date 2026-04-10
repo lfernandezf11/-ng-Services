@@ -25,7 +25,9 @@ setInterval(() => {
     message: `Mensaje de texto ${generalCount}`,
     timestamp: new Date().toISOString(),
   });
+}, 2000);
 
+setInterval(() => {
   progress = progress >= 100 ? 10 : progress + 10;
   broadcast('progress', {
     message: `Progreso al ${progress}%`,
