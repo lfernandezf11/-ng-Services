@@ -1,0 +1,84 @@
+<main>
+    <app-title [pageName]="'Mensajes WebSocket'"></app-title>
+
+    <div class="tabla">
+        <div class="toolbar">
+            <div>
+                <h2>Mensajes recibidos por WebSocket</h2>
+                <h3>Estado de conexión: {{ status() | uppercase }}</h3>
+                @if (isConnectionActive) {
+                    <p class="status-chip success">Conexión activa</p>
+                } @else {
+                    <p class="status-chip">Conexión inactiva</p>
+                }
+            </div>
+
+            <div class="actions">
+                <button type="button" class="action-button"
+                        (click)="startConnection()"
+                        [disabled]="isConnectionActive">
+                    Iniciar conexión
+                </button>
+                <button type="button" class="action-button"
+                        (click)="sendPing()"
+                        [disabled]="!isConnectionActive">
+                    Enviar ping
+                </button>
+                <button type="button" class="action-button secondary"
+                        (click)="stopConnection()"
+                        [disabled]="!isConnectionActive">
+                    Cerrar conexión
+                </button>
+            </div>
+        </div>
+
+        <div class="sender">
+            <label for="ws-message">Mensaje para el servidor</label>
+            <div class="sender-row">
+                <input
+                    id="ws-message"
+                    type="text"
+                    name="ws-message"
+                    [(ngModel)]="messageText"
+                    [disabled]="!isConnectionActive"
+                    (keydown.enter)="sendMessage()"
+                    placeholder="Escribe un mensaje"
+                />
+                <button
+                    type="button"
+                    class="action-button"
+                    (click)="sendMessage()"
+                    [disabled]="!isConnectionActive || !messageText.trim()"
+                >
+                    Enviar
+                </button>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mensaje</th>
+                    <th>Hora</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (msg of messages; track msg.timestamp ?? $index) {
+                    <tr>
+                        <td>{{ msg.payload.text || '-' }}</td>
+                        <td>{{ msg.timestamp | date:'HH:mm:ss' }}</td>
+                        <td>
+                            <span class="badge">{{ msg.type | uppercase }}</span>
+                        </td>
+                    </tr>
+                } @empty {
+                    <tr>
+                        <td colspan="3" style="text-align: center;">No hay mensajes nuevos.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>
+<app-footer></app-footer>

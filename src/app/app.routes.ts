@@ -6,6 +6,7 @@ import { authGuard } from './core/guards/auth.guard';
 import { LoginFormComponent } from './components/loginForm/login-form.component';
 import { AnimationsComponent } from './pages/animations/animations.component';
 import { MessagesListComponent } from './pages/messages-list/messages-list.component';
+import { WsMessagesComponent } from './pages/ws-messages/ws-messages.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +24,10 @@ export const routes: Routes = [
   {
     path: 'sse',
     component: MessagesListComponent
+  },
+  {
+    path: 'websockets',
+    component: WsMessagesComponent
   },
   {
     path: 'login',
