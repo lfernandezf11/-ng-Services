@@ -2,12 +2,11 @@ import { Component, inject } from '@angular/core';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { FooterComponent } from '../../components/footer/footer.component';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-details',
-  imports: [FooterComponent, TranslatePipe],
+  imports: [TranslatePipe],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })

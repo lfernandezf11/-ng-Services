@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { TitleComponent } from '../../components/title/title.component';
-import { FooterComponent } from '../../components/footer/footer.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import {
   CurrencyPipe,
@@ -22,7 +21,6 @@ import { EdadPipe } from '../../pipes/edad.pipe';
   standalone: true,
   imports: [
     TitleComponent,
-    FooterComponent,
     TranslatePipe,
     UpperCasePipe,
     LowerCasePipe,
@@ -46,7 +44,7 @@ export class HomeComponent {
   price = 1234.56;
   progress = 0.72;
   completed = 0.95;
-  longText = 'La vida del estudiante es compleja cuando se trata de aprender Angular. Menuda curva de aprendizaje :(';
+  longText = 'homePipes.slice.longText';
   
   userProfile = {
     name: 'Lucia',

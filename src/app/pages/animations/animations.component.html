@@ -1,56 +1,56 @@
 <main class="animations-page" #animationsRoot>
-	<app-title [pageName]="'Animaciones GSAP'"></app-title>
+	<app-title [pageName]="'pages.animations' | translate"></app-title>
 
 	<section class="demo-card hero-card">
-		<p class="eyebrow">Ejercicio 1</p>
-		<h3 class="animated-title">Animación de un título con .from(), .to()</h3>
-		<p class="hero-copy">Una entrada sencilla con desplazamiento, opacidad, duración y easing.</p>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 1 } }}</p>
+		<h3 class="animated-title">{{ 'animations.hero.title' | translate }}</h3>
+		<p class="hero-copy">{{ 'animations.hero.copy' | translate }}</p>
 	</section>
 
 	<section class="demo-card sequence-card">
-		<p class="eyebrow">Ejercicio 2</p>
-		<h3 class="sequence-title">Secuencia de animación (timeline)</h3>
-		<p class="sequence-subtitle">Título, subtítulo y botón entran en orden con timeline.</p>
-		<button type="button" class="sequence-button action-button" (click)="runSequenceAnimation()">Ver secuencia</button>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 2 } }}</p>
+		<h3 class="sequence-title">{{ 'animations.sequence.title' | translate }}</h3>
+		<p class="sequence-subtitle">{{ 'animations.sequence.subtitle' | translate }}</p>
+		<button type="button" class="sequence-button action-button" (click)="runSequenceAnimation()">{{ 'animations.sequence.action' | translate }}</button>
 	</section>
 
 	<section class="demo-card">
-		<p class="eyebrow">Ejercicio 3</p>
-		<h3>Animación en cadena (stagger)</h3>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 3 } }}</p>
+		<h3>{{ 'animations.stagger.title' | translate }}</h3>
 		<ul class="stagger-list">
 			<li class="stagger-item" *ngFor="let item of staggerItems">{{ item }}</li>
 		</ul>
-		<button type="button" class="action-button" (click)="runStaggerAnimation()">Lanzar stagger</button>
+		<button type="button" class="action-button" (click)="runStaggerAnimation()">{{ 'animations.stagger.action' | translate }}</button>
 	</section>
 
 	<section class="demo-card decorative-card">
-		<p class="eyebrow">Ejercicio 4</p>
-		<h3>Animación repetitiva</h3>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 4 } }}</p>
+		<h3>{{ 'animations.decorative.title' | translate }}</h3>
 		<div class="decorative-orb"></div>
 	</section>
 
 	<section class="demo-card labels-card">
-		<p class="eyebrow">Ejercicio 5</p>
-		<h3>Labels en el timeline</h3>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 5 } }}</p>
+		<h3>{{ 'animations.labels.title' | translate }}</h3>
 		<div class="label-track">
-			<span class="label-pill start">Inicio</span>
-			<span class="label-pill middle">Centro</span>
-			<span class="label-pill end">Final</span>
+			<span class="label-pill start">{{ 'animations.labels.start' | translate }}</span>
+			<span class="label-pill middle">{{ 'animations.labels.middle' | translate }}</span>
+			<span class="label-pill end">{{ 'animations.labels.end' | translate }}</span>
 		</div>
-		<button type="button" class="action-button" (click)="runLabelsAnimation()">Lanzar labels</button>
+		<button type="button" class="action-button" (click)="runLabelsAnimation()">{{ 'animations.labels.action' | translate }}</button>
 	</section>
 
 	<section class="demo-card callbacks-card">
-		<p class="eyebrow">Ejercicio 6</p>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 6 } }}</p>
 		<h3>Callbacks</h3>
-		<p class="card-copy">{{ callbackMessage }}</p>
+		<p class="card-copy">{{ callbackMessageKey | translate }}</p>
 		<div class="callback-box"></div>
-		<button type="button" class="action-button" (click)="playCallbackAnimation()">Lanzar callbacks</button>
+		<button type="button" class="action-button" (click)="playCallbackAnimation()">{{ 'animations.callbacks.action' | translate }}</button>
 	</section>
 
 	<section class="demo-card controls-card">
-		<p class="eyebrow">Ejercicio 7</p>
-		<h3>Control manual del timeline</h3>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 7 } }}</p>
+		<h3>{{ 'animations.controls.title' | translate }}</h3>
 		<div class="control-box"></div>
 		<div class="control-buttons">
 			<button type="button" class="action-button" (click)="playControlTimeline()">Play</button>
@@ -60,34 +60,32 @@
 	</section>
 
 	<section class="demo-card click-card">
-		<p class="eyebrow">Ejercicio 8</p>
-		<h3>Animación con evento de usuario</h3>
-		<button type="button" class="action-button" (click)="runClickAnimation()">Animar al hacer click</button>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 8 } }}</p>
+		<h3>{{ 'animations.click.title' | translate }}</h3>
+		<button type="button" class="action-button" (click)="runClickAnimation()">{{ 'animations.click.action' | translate }}</button>
 		<div class="click-burst"></div>
 	</section>
 
 	<section class="demo-card scroll-card">
-		<p class="eyebrow">Ejercicio 9</p>
-		<h3>Animación basada en scroll</h3>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 9 } }}</p>
+		<h3>{{ 'animations.scroll.title' | translate }}</h3>
 		<div class="scroll-panel">
-			<p>Este panel entra cuando aparece en pantalla.</p>
+			<p>{{ 'animations.scroll.copy' | translate }}</p>
 		</div>
 	</section>
 
 	<section class="demo-card mouse-card">
-		<p class="eyebrow">Ejercicio 10</p>
-		<h3>Movimiento del ratón</h3>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 10 } }}</p>
+		<h3>{{ 'animations.mouse.title' | translate }}</h3>
 		<div class="mouse-area" #mouseArea>
 			<div class="mouse-dot" #mouseDot></div>
-			<p>Mueve el puntero dentro de este área.</p>
+			<p>{{ 'animations.mouse.copy' | translate }}</p>
 		</div>
 	</section>
 
 	<section class="demo-card responsive-card">
-		<p class="eyebrow">Ejercicio 11</p>
-		<h3>Animación responsive</h3>
-		<div class="responsive-box">Desktop y mobile usan entradas distintas con matchMedia.</div>
+		<p class="eyebrow">{{ 'animations.exercise' | translate:{ value: 11 } }}</p>
+		<h3>{{ 'animations.responsive.title' | translate }}</h3>
+		<div class="responsive-box">{{ 'animations.responsive.copy' | translate }}</div>
 	</section>
-
-	<app-footer></app-footer>
 </main>

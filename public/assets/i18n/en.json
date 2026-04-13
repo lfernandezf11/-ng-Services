@@ -1,8 +1,12 @@
 {
   "navbar": {
-    "home": "Go to Home",
+    "home": "Home",
     "about": "About",
-    "login": "Login"
+    "login": "Sign in",
+    "animations": "Animations",
+    "sse": "SSE",
+    "websockets": "WebSocket",
+    "logout": "Sign out"
   },
   "title": {
     "welcomePage": "Welcome to the {{pageName}} page"
@@ -13,7 +17,166 @@
   "pages": {
     "home": "Home",
     "about": "About",
-    "login": "Login"
+    "login": "Login",
+    "admin": "Administrator",
+    "animations": "GSAP Animations",
+    "sse": "SSE message list",
+    "websockets": "WebSocket messages"
+  },
+  "loginForm": {
+    "heading": "Sign in",
+    "labels": {
+      "name": "Name:",
+      "password": "Password:"
+    },
+    "actions": {
+      "submit": "Submit",
+      "clear": "Clear"
+    },
+    "errors": {
+      "invalidCredentials": "Invalid credentials",
+      "serverConnection": "Could not connect to the server"
+    }
+  },
+  "sse": {
+    "title": "Messages received from server",
+    "connectionStatus": "Connection status",
+    "actions": {
+      "start": "Start connection",
+      "stop": "Stop connection"
+    },
+    "progressLabel": "Task progress",
+    "table": {
+      "message": "Message",
+      "time": "Time",
+      "type": "Type"
+    },
+    "defaultType": "General",
+    "empty": "No new messages."
+  },
+  "ws": {
+    "title": "Messages received via WebSocket",
+    "connectionStatus": "Connection status",
+    "filters": {
+      "title": "Filter by message type",
+      "allTypes": "All types",
+      "reset": "Reset filters"
+    },
+    "types": {
+      "general": "General",
+      "progress": "Progress",
+      "notification": "Notification",
+      "status": "Status",
+      "ping": "Ping",
+      "chat": "Chat",
+      "system": "System",
+      "error": "Error"
+    },
+    "status": {
+      "active": "Connection active",
+      "inactive": "Connection inactive"
+    },
+    "actions": {
+      "start": "Start connection",
+      "ping": "Send ping",
+      "close": "Close connection",
+      "send": "Send"
+    },
+    "sender": {
+      "label": "Message to server",
+      "placeholder": "Type a message"
+    },
+    "table": {
+      "message": "Message",
+      "time": "Time",
+      "type": "Type"
+    },
+    "empty": "No new messages.",
+    "sentPrefix": "Message sent to server:"
+  },
+  "animations": {
+    "exercise": "Exercise {{value}}",
+    "hero": {
+      "title": "Title animation with .from(), .to()",
+      "copy": "A simple intro with movement, opacity, duration and easing."
+    },
+    "sequence": {
+      "title": "Animation sequence (timeline)",
+      "subtitle": "Title, subtitle and button enter in sequence with timeline.",
+      "action": "View sequence"
+    },
+    "stagger": {
+      "title": "Stagger animation",
+      "action": "Run stagger"
+    },
+    "decorative": {
+      "title": "Repeating animation"
+    },
+    "labels": {
+      "title": "Timeline labels",
+      "start": "Start",
+      "middle": "Middle",
+      "end": "End",
+      "action": "Run labels"
+    },
+    "callbacks": {
+      "idle": "Press the button to run the animation.",
+      "started": "Animation started.",
+      "completed": "Animation completed.",
+      "action": "Run callbacks"
+    },
+    "controls": {
+      "title": "Manual timeline controls"
+    },
+    "click": {
+      "title": "User event animation",
+      "action": "Animate on click"
+    },
+    "scroll": {
+      "title": "Scroll-based animation",
+      "copy": "This panel animates in when it enters the viewport."
+    },
+    "mouse": {
+      "title": "Mouse movement",
+      "copy": "Move the pointer inside this area."
+    },
+    "responsive": {
+      "title": "Responsive animation",
+      "copy": "Desktop and mobile use different entrances with matchMedia."
+    }
+  },
+  "homePipes": {
+    "text": {
+      "summary": "Text pipes"
+    },
+    "samples": {
+      "hello": "hello world",
+      "helloUpper": "HELLO WORLD"
+    },
+    "date": {
+      "fullDate": "Full date (date:'fullDate')",
+      "shortDate": "Short date (date:'shortDate')",
+      "time": "Time (date:'shortTime')",
+      "dateTime": "Date and time (date:'medium')",
+      "custom": "Custom format (date:'dd/MM/yyyy HH:mm:ss')"
+    },
+    "percent": {
+      "basicProgress": "Basic progress",
+      "progressTwoDecimals": "Progress with 2 decimals"
+    },
+    "slice": {
+      "fullText": "Full text",
+      "first20": "First 20 characters",
+      "from10": "From position 10",
+      "longText": "Student life is complex when it comes to learning Angular. What a steep learning curve :("
+    },
+    "custom": {
+      "summary": "Custom pipes",
+      "name": "Lucia",
+      "ageLabel": "EdadPipe (03/15/1996)",
+      "highlightText": "Highlighted text",
+      "years": "years"
+    }
   },
   "userList": {
     "filtersTitle": "User filter",

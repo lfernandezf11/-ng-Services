@@ -1,13 +1,13 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { TitleComponent } from '../../components/title/title.component';
-import { FooterComponent } from "../../components/footer/footer.component";
 import { SseService } from '../../services/sse.service';
 import { Subscription } from 'rxjs';
 import { DatePipe, UpperCasePipe } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-messages-list',
-  imports: [TitleComponent, FooterComponent, DatePipe, UpperCasePipe],
+  imports: [TitleComponent, DatePipe, UpperCasePipe, TranslatePipe],
   templateUrl: './messages-list.component.html',
   styleUrl: './messages-list.component.scss'
 })

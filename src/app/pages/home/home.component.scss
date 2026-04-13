@@ -6,11 +6,9 @@ main {
     flex-direction: column;
     min-height: calc(100dvh - 60px);
     gap: 1rem;
+    padding-bottom: 2rem;
 }
 
-app-footer {
-    margin-top: auto;
-}
 .pipe-card {
     margin: 0;
     display: flex;

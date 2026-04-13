@@ -2,13 +2,13 @@
     <nav>
         <button routerLink="/">{{ 'navbar.home' | translate }}</button>
         <button routerLink="/about">{{ 'navbar.about' | translate }}</button>
-        <button routerLink="/animations">Animaciones</button>
-        <button routerLink="/sse">SSE</button>
-        <button routerLink="/websockets">WebSocket</button>
+        <button routerLink="/animations">{{ 'navbar.animations' | translate }}</button>
+        <button routerLink="/sse">{{ 'navbar.sse' | translate }}</button>
+        <button routerLink="/websockets">{{ 'navbar.websockets' | translate }}</button>
         @if (isAuthenticated()) {
-            <button (click)="logout()">Cerrar sesión</button>
+            <button (click)="logout()">{{ 'navbar.logout' | translate }}</button>
         } @else {
-            <button routerLink="/login">Iniciar sesión</button>
+            <button routerLink="/login">{{ 'navbar.login' | translate }}</button>
         }
 
     </nav>

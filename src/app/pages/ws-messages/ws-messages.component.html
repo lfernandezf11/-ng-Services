@@ -1,39 +1,39 @@
 <main>
-    <app-title [pageName]="'Mensajes WebSocket'"></app-title>
+    <app-title [pageName]="'pages.websockets' | translate"></app-title>
 
     <div class="tabla">
         <div class="toolbar">
             <div>
-                <h2>Mensajes recibidos por WebSocket</h2>
-                <h3>Estado de conexión: {{ status() | uppercase }}</h3>
+                <h2>{{ 'ws.title' | translate }}</h2>
+                <h3>{{ 'ws.connectionStatus' | translate }}: {{ status() | uppercase }}</h3>
                 @if (isConnectionActive) {
-                    <p class="status-chip success">Conexión activa</p>
+                    <p class="status-chip success">{{ 'ws.status.active' | translate }}</p>
                 } @else {
-                    <p class="status-chip">Conexión inactiva</p>
-                }
             </div>
+                    <p class="status-chip">{{ 'ws.status.inactive' | translate }}</p>
+                }
 
             <div class="actions">
                 <button type="button" class="action-button"
                         (click)="startConnection()"
                         [disabled]="isConnectionActive">
-                    Iniciar conexión
+                    {{ 'ws.actions.start' | translate }}
                 </button>
                 <button type="button" class="action-button"
                         (click)="sendPing()"
                         [disabled]="!isConnectionActive">
-                    Enviar ping
+                    {{ 'ws.actions.ping' | translate }}
                 </button>
                 <button type="button" class="action-button secondary"
                         (click)="stopConnection()"
                         [disabled]="!isConnectionActive">
-                    Cerrar conexión
+                    {{ 'ws.actions.close' | translate }}
                 </button>
             </div>
         </div>
 
         <div class="sender">
-            <label for="ws-message">Mensaje para el servidor</label>
+            <label for="ws-message">{{ 'ws.sender.label' | translate }}</label>
             <div class="sender-row">
                 <input
                     id="ws-message"
@@ -42,7 +42,7 @@
                     [(ngModel)]="messageText"
                     [disabled]="!isConnectionActive"
                     (keydown.enter)="sendMessage()"
-                    placeholder="Escribe un mensaje"
+                    placeholder="{{ 'ws.sender.placeholder' | translate }}"
                 />
                 <button
                     type="button"
@@ -50,21 +50,41 @@
                     (click)="sendMessage()"
                     [disabled]="!isConnectionActive || !messageText.trim()"
                 >
-                    Enviar
+                    {{ 'ws.actions.send' | translate }}
                 </button>
             </div>
+        </div>
+
+        <div class="filters">
+            <h2>{{ 'ws.filters.title' | translate }}</h2>
+            <select
+                [value]="typeFilter()"
+                (change)="typeFilter.set($any($event.target).value)">
+                <option value="">{{ 'ws.filters.allTypes' | translate }}</option>
+                @for (type of wsMessageTypes; track type) {
+                    <option [value]="type">{{ ('ws.types.' + type) | translate }}</option>
+                }
+            </select>
+
+            <button
+                type="button"
+                class="action-button secondary"
+                (click)="resetFilters()"
+                [disabled]="!typeFilter()">
+                {{ 'ws.filters.reset' | translate }}
+            </button>
         </div>
 
         <table>
             <thead>
                 <tr>
-                    <th>Mensaje</th>
-                    <th>Hora</th>
-                    <th>Tipo</th>
+                    <th>{{ 'ws.table.message' | translate }}</th>
+                    <th>{{ 'ws.table.time' | translate }}</th>
+                    <th>{{ 'ws.table.type' | translate }}</th>
                 </tr>
             </thead>
             <tbody>
-                @for (msg of messages; track msg.timestamp ?? $index) {
+                @for (msg of filteredMessages(); track msg.timestamp ?? $index) {
                     <tr>
                         <td>{{ msg.payload.text || '-' }}</td>
                         <td>{{ msg.timestamp | date:'HH:mm:ss' }}</td>
@@ -74,11 +94,10 @@
                     </tr>
                 } @empty {
                     <tr>
-                        <td colspan="3" style="text-align: center;">No hay mensajes nuevos.</td>
+                        <td colspan="3" style="text-align: center;">{{ 'ws.empty' | translate }}</td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
 </main>
-<app-footer></app-footer>

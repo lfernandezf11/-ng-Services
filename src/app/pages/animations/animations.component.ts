@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 import { TitleComponent } from '../../components/title/title.component';
-import { FooterComponent } from '../../components/footer/footer.component';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
     selector: 'app-animations',
     standalone: true,
-    imports: [CommonModule, TitleComponent, FooterComponent],
+    imports: [CommonModule, TitleComponent, TranslatePipe],
     templateUrl: './animations.component.html',
     styleUrl: './animations.component.scss'
 })
@@ -25,7 +25,7 @@ export class AnimationsComponent implements AfterViewInit, OnDestroy {
     @ViewChild('mouseDot') mouseDot!: ElementRef<HTMLElement>;
 
     staggerItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
-    callbackMessage = 'Pulsa el botón para lanzar la animación.';
+    callbackMessageKey = 'animations.callbacks.idle';
 
     // Persistimos la referencia al timeline concreto de las animaciones sólo cuando necesitamos control externo (Play/Restart)
     private context?: gsap.Context;
@@ -70,8 +70,8 @@ export class AnimationsComponent implements AfterViewInit, OnDestroy {
             // Ejercicio 6: Callbacks
             this.callbackTimeline = gsap.timeline({
                 paused: true,
-                onStart: () => this.updateMessage('La animación empezó.'),
-                onComplete: () => this.updateMessage('La animación terminó.')
+                onStart: () => this.updateMessage('animations.callbacks.started'),
+                onComplete: () => this.updateMessage('animations.callbacks.completed')
             }).to('.callback-box', { rotation: 10, scale: 1.1 }).to('.callback-box', { rotation: 0, scale: 1 });
 
             // Ejercicio 7: Control manual
@@ -132,8 +132,8 @@ export class AnimationsComponent implements AfterViewInit, OnDestroy {
         this.mouseArea.nativeElement.addEventListener('pointermove', onMove);
     }
 
-    private updateMessage(msg: string) {
-        this.callbackMessage = msg;
+    private updateMessage(msgKey: string) {
+        this.callbackMessageKey = msgKey;
         this.cdr.detectChanges();
     }
 

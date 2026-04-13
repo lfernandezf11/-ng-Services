@@ -1,7 +1,12 @@
 {
   "navbar": {
-    "home": "Ir a Inicio",
-    "about": "About"
+    "home": "Inicio",
+    "about": "About",
+    "login": "Iniciar sesión",
+    "animations": "Animaciones",
+    "sse": "SSE",
+    "websockets": "WebSocket",
+    "logout": "Cerrar sesión"
   },
   "title": {
     "welcomePage": "Bienvenido a la página de {{pageName}}"
@@ -12,7 +17,166 @@
   "pages": {
     "home": "Inicio",
     "about": "Acerca de",
-    "login": "Inicio de sesión"
+    "login": "Inicio de sesión",
+    "admin": "Administrador",
+    "animations": "Animaciones GSAP",
+    "sse": "Lista de mensajes SSE",
+    "websockets": "Mensajes WebSocket"
+  },
+  "loginForm": {
+    "heading": "Iniciar sesión",
+    "labels": {
+      "name": "Nombre:",
+      "password": "Contraseña:"
+    },
+    "actions": {
+      "submit": "Enviar",
+      "clear": "Limpiar"
+    },
+    "errors": {
+      "invalidCredentials": "Credenciales incorrectas",
+      "serverConnection": "No se ha podido conectar con el servidor"
+    }
+  },
+  "sse": {
+    "title": "Mensajes recibidos desde el servidor",
+    "connectionStatus": "Estado de conexión",
+    "actions": {
+      "start": "Iniciar conexión",
+      "stop": "Parar conexión"
+    },
+    "progressLabel": "Progreso de la tarea",
+    "table": {
+      "message": "Mensaje",
+      "time": "Hora",
+      "type": "Tipo"
+    },
+    "defaultType": "General",
+    "empty": "No hay mensajes nuevos."
+  },
+  "ws": {
+    "title": "Mensajes recibidos por WebSocket",
+    "connectionStatus": "Estado de conexión",
+    "filters": {
+      "title": "Filtrar por tipo de mensaje",
+      "allTypes": "Todos los tipos",
+      "reset": "Resetear filtros"
+    },
+    "types": {
+      "general": "General",
+      "progress": "Progreso",
+      "notification": "Notificación",
+      "status": "Estado",
+      "ping": "Ping",
+      "chat": "Chat",
+      "system": "Sistema",
+      "error": "Error"
+    },
+    "status": {
+      "active": "Conexión activa",
+      "inactive": "Conexión inactiva"
+    },
+    "actions": {
+      "start": "Iniciar conexión",
+      "ping": "Enviar ping",
+      "close": "Cerrar conexión",
+      "send": "Enviar"
+    },
+    "sender": {
+      "label": "Mensaje para el servidor",
+      "placeholder": "Escribe un mensaje"
+    },
+    "table": {
+      "message": "Mensaje",
+      "time": "Hora",
+      "type": "Tipo"
+    },
+    "empty": "No hay mensajes nuevos.",
+    "sentPrefix": "Mensaje enviado al servidor:"
+  },
+  "animations": {
+    "exercise": "Ejercicio {{value}}",
+    "hero": {
+      "title": "Animación de un título con .from(), .to()",
+      "copy": "Una entrada sencilla con desplazamiento, opacidad, duración y easing."
+    },
+    "sequence": {
+      "title": "Secuencia de animación (timeline)",
+      "subtitle": "Título, subtítulo y botón entran en orden con timeline.",
+      "action": "Ver secuencia"
+    },
+    "stagger": {
+      "title": "Animación en cadena (stagger)",
+      "action": "Lanzar stagger"
+    },
+    "decorative": {
+      "title": "Animación repetitiva"
+    },
+    "labels": {
+      "title": "Labels en el timeline",
+      "start": "Inicio",
+      "middle": "Centro",
+      "end": "Final",
+      "action": "Lanzar labels"
+    },
+    "callbacks": {
+      "idle": "Pulsa el botón para lanzar la animación.",
+      "started": "La animación empezó.",
+      "completed": "La animación terminó.",
+      "action": "Lanzar callbacks"
+    },
+    "controls": {
+      "title": "Control manual del timeline"
+    },
+    "click": {
+      "title": "Animación con evento de usuario",
+      "action": "Animar al hacer click"
+    },
+    "scroll": {
+      "title": "Animación basada en scroll",
+      "copy": "Este panel entra cuando aparece en pantalla."
+    },
+    "mouse": {
+      "title": "Movimiento del ratón",
+      "copy": "Mueve el puntero dentro de este área."
+    },
+    "responsive": {
+      "title": "Animación responsive",
+      "copy": "Desktop y mobile usan entradas distintas con matchMedia."
+    }
+  },
+  "homePipes": {
+    "text": {
+      "summary": "Pipes de texto"
+    },
+    "samples": {
+      "hello": "hola mundo",
+      "helloUpper": "HOLA MUNDO"
+    },
+    "date": {
+      "fullDate": "Fecha completa (date:'fullDate')",
+      "shortDate": "Fecha corta (date:'shortDate')",
+      "time": "Hora (date:'shortTime')",
+      "dateTime": "Fecha y hora (date:'medium')",
+      "custom": "Formato personalizado (date:'dd/MM/yyyy HH:mm:ss')"
+    },
+    "percent": {
+      "basicProgress": "Progreso básico",
+      "progressTwoDecimals": "Progreso con 2 decimales"
+    },
+    "slice": {
+      "fullText": "Texto completo",
+      "first20": "Primeros 20 caracteres",
+      "from10": "Desde posición 10",
+      "longText": "La vida del estudiante es compleja cuando se trata de aprender Angular. Menuda curva de aprendizaje :("
+    },
+    "custom": {
+      "summary": "Pipes Personalizados",
+      "name": "Lucía",
+      "ageLabel": "EdadPipe (15/03/1996)",
+      "highlightText": "Texto resaltado",
+      "years": "años"
+    }
   },
   "userList": {
     "filtersTitle": "Filtro de usuarios",
